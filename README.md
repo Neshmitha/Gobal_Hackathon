@@ -1,4 +1,4 @@
-# Clarion – AI Research Pilot
+# Clarion – AI Research Pilot & Career Intelligence Platform
 
 ![License](https://img.shields.io/badge/License-ISC-blue.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)
@@ -7,45 +7,137 @@
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3-38bdf8.svg)
 ![Render](https://img.shields.io/badge/Deploy-Render-informational.svg)
 
-Clarion is an AI-powered research workspace designed to help students, researchers, and innovators discover, organize, draft, and collaborate on research papers efficiently. It streamlines the complete research workflow—from initial topic exploration to AI-assisted paper drafting and peer collaboration—using state-of-the-art LLMs (Gemini, LLaMA, Groq) and RAG (Retrieval-Augmented Generation) technology.
+**Clarion** is a unified, AI-powered research ecosystem built to bridge the gap between academic research execution and career development. The platform is structured around **2 Main Core Modules**:
+
+1. **💼 Career Module**: AI-driven career matching, skill gap analysis, research readiness scoring, 4-phase career roadmaps, and real-time job/internship discovery.
+2. **🔬 Research Module**: Full-lifecycle research workspace featuring ArXiv paper discovery, FAISS RAG-vector indexing, LLM research assistance, side-by-side paper comparison, multi-format AI paper drafting (IEEE/Springer/APA), DocSpace rich editor, guided research planning, and peer contribution tools.
 
 ---
 
-## 🚀 Key Features
+## 🌟 Architecture Overview
 
-### 🔍 Paper Discovery & ArXiv Integration
-- Search research papers directly from ArXiv by topic or domain.
-- Preview paper abstracts, authors, and citation details before saving them directly to your workspace.
+```
+                                  ┌─────────────────────────────────────────┐
+                                  │               CLARION AI                │
+                                  └────────────────────┬────────────────────┘
+                                                       │
+                   ┌───────────────────────────────────┴───────────────────────────────────┐
+                   │                                                                       │
+        ┌──────────┴──────────┐                                                 ┌──────────┴──────────┐
+        │   CAREER MODULE     │                                                 │   RESEARCH MODULE   │
+        └──────────┬──────────┘                                                 └──────────┬──────────┘
+                   │                                                                       │
+ ┌─────────────────┼─────────────────┐                                 ┌───────────────────┼───────────────────┐
+ │                 │                 │                                 │                   │                   │
+ ▼                 ▼                 ▼                                 ▼                   ▼                   ▼
+Skill Gap     Readiness       Automated Job                        ArXiv & RAG       AI Paper Drafter     Collaborative
+Engine        Score (5D)      Opportunities                        Assistant         & DocSpace           Contributions
+```
 
-### 📚 Research Workspace & My Library
-- Personal research hub to manage saved and uploaded PDF research papers.
-- Track research domains, add customized notes, mark favorites, and calculate paper impact factors.
-- Compare two research papers side-by-side using AI for deep analytical insights.
+---
 
-### 🤖 AI Research Assistant & RAG Pipeline
-- Context-aware chatbot powered by LLaMA and Gemini API.
-- Answers research-related questions, explains complex methodologies, and retrieves relevant citations from your index.
+## 💼 Module 1: Career Module (Career Intelligence & Readiness)
 
-### ✍️ Paper Drafter & DocSpace Editor
-- Auto-generate structured paper drafts based on topic, domain, and specific section preferences (IEEE, Springer, APA, ACM, Elsevier formats).
-- Integrated rich text editor (DocSpace) similar to Google Docs for real-time document editing and formatting.
+The Career Module helps students, researchers, and engineers map their technical skills to scientific career paths, identify skill gaps, evaluate research readiness, and apply for active opportunities.
 
-### 🧭 Guided Research Builder
-- Step-by-step workflow for research beginners: domain selection, paper discovery, problem statement formulation, methodology planning, experiment design, gap analysis, and final evaluation score.
+### Key Capabilities:
+- **12 Curated AI & Scientific Career Tracks**:
+  - AI/ML Researcher (NeurIPS/ICML focus)
+  - Generative AI Researcher (LLMs, Diffusion Models)
+  - Computer Vision Researcher (CNNs, 3D Vision, Medical Imaging)
+  - NLP Researcher (Transformers, Translation, Dialogue)
+  - Data Science Researcher (Causal Inference, Bayesian Stats)
+  - Robotics Researcher (ROS, Control Theory, Perception)
+  - Cybersecurity Researcher (Cryptography, Threat Modeling)
+  - Healthcare AI Researcher (Diagnostics, Genomics)
+  - Data Mining Researcher (Knowledge Graphs, Anomaly Detection)
+  - Software Systems Researcher (Compilers, Distributed Systems)
+  - Quantum AI Researcher (Qiskit, Quantum Neural Nets)
+  - Bioinformatics & Genomics Researcher (Molecular Modeling, BLAST)
 
-### 🤝 Collaborative Contributions
-- Peer-to-peer research collaboration system.
-- Issue owners can post specific research queries or task requests.
-- Contributors submit pitches and solutions, which owners can review, rate, and incorporate.
+- **🎯 Skill Matching & Gap Analysis Engine**:
+  - Profile skill tracking with proficiency weighting (`Beginner` 0.3, `Intermediate` 0.65, `Advanced` 1.0).
+  - Categorizes skills into **Strong Matches**, **Skills to Improve**, and **Critical Skill Gaps**.
+
+- **📊 5-Dimension Research Readiness Score**:
+  Evaluates overall career readiness on a 100-point scale across 5 weighted dimensions:
+  1. **Technical Skills** (35%)
+  2. **Research Methodology** (25%)
+  3. **Domain Knowledge** (20%)
+  4. **Academic Writing** (12%)
+  5. **Research Experience** (8%)
+
+- **🗺️ 4-Phase Personalized Roadmap**:
+  Generates custom action steps tailored to bridge skill gaps:
+  - *Phase 1: Foundations* (Domain concepts & literature discovery)
+  - *Phase 2: Research Methodology* (Experimental design & guide planning)
+  - *Phase 3: Advanced Specialization* (Architectures & AI Assistant Q&A)
+  - *Phase 4: Active Research & Publication* (Paper drafting & submission)
+
+- **⚡ Real-Time Opportunities Aggregator**:
+  Automated integration with **RapidAPI (JSearch)** to pull active research internships and assistantships from top institutions (Google DeepMind, OpenAI, Microsoft Research, Meta AI, etc.).
+
+---
+
+## 🔬 Module 2: Research Module (End-to-End AI Research Workspace)
+
+The Research Module provides an end-to-end suite of tools for exploring literature, managing papers, asking context-aware research questions, drafting publications, and collaborating with peers.
+
+### Key Capabilities:
+
+- **🔍 Paper Discovery & ArXiv Integration**:
+  - Live ArXiv search by domain or keyword query.
+  - Preview abstracts, publication dates, and author metadata.
+  - One-click import into personal library.
+
+- **📚 Personal Research Library & Workspace**:
+  - Upload local PDF research papers.
+  - Organize papers by research domain.
+  - Add notes, mark favorites, calculate paper impact scores, and download original files.
+
+- **🤖 AI Research Assistant & RAG Pipeline**:
+  - FAISS (Facebook AI Similarity Search) vector indexing with semantic text chunking.
+  - Contextual Q&A using **Google Gemini** & **Groq LLaMA** models.
+  - Extract research methodologies, key equations, and dataset references.
+
+- **⚖️ Side-by-Side Paper Comparison**:
+  - Compare two research papers side-by-side.
+  - AI extraction of differences in methodology, dataset sizes, hardware requirements, and baseline benchmarks.
+
+- **✍️ Multi-Format Paper Drafter**:
+  - Auto-generates structured academic manuscripts based on user topic & domain input.
+  - Supports standard publishing styles: **IEEE, Springer, APA, ACM, Elsevier**.
+  - Fetches and embeds relevant ArXiv paper citations into draft reference sections.
+
+- **📝 DocSpace Editor**:
+  - Integrated rich text editor (similar to Google Docs).
+  - Edit, format, structure, and export generated papers.
+
+- **🧭 Guided Research Builder**:
+  - 6-step guided path for research beginners:
+    1. *Domain Selection*
+    2. *ArXiv Paper Exploration*
+    3. *Problem Statement Formulation*
+    4. *Methodology Selection*
+    5. *Experiment Design*
+    6. *Gap Analysis & Readiness Evaluation*
+
+- **🤝 Peer-to-Peer Contributions & Collaboration**:
+  - Research issue board where paper owners can post open questions or task requests.
+  - Peer contributors submit pitches and solutions.
+  - Owners can review, accept, rate, and manage contributor teams.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 19, Vite, Tailwind CSS, Lucide React, Framer Motion, Axios
-- **Backend**: Node.js, Express.js, MongoDB Atlas, Mongoose
-- **AI Services**: Google Gemini API, Groq LLaMA models, LLaMA Cloud, FAISS Indexing (RAG)
-- **Deployment**: Render (Web Service & Static Site via `render.yaml` Blueprint)
+| Layer | Technologies |
+| :--- | :--- |
+| **Frontend** | React 19, Vite, Tailwind CSS, Lucide React, Framer Motion, Axios, React Quill |
+| **Backend** | Node.js, Express.js, MongoDB Atlas, Mongoose |
+| **AI & RAG** | Google Gemini API, Groq LLaMA models, FAISS Node Vector Index, LLaMA Cloud |
+| **Integrations** | ArXiv Search API, RapidAPI JSearch Jobs API |
+| **Deployment** | Render (Web Service & Static Site via `render.yaml` Infrastructure-as-Code) |
 
 ---
 
@@ -53,21 +145,24 @@ Clarion is an AI-powered research workspace designed to help students, researche
 
 ```
 project-hackathon/
-├── client/                 # React (Vite) Frontend Application
-│   ├── src/                # Components, Pages, Assets, and Configuration
-│   ├── index.html          # Entry HTML file
-│   ├── package.json        # Frontend Dependencies
-│   └── vite.config.js      # Vite Configuration
-├── server/                 # Express.js Backend API
-│   ├── controllers/        # Route Handlers & Business Logic
-│   ├── models/             # Mongoose Data Schemas
-│   ├── routes/             # API Endpoints
-│   ├── services/           # AI, RAG & FAISS Services
-│   ├── index.js            # Server Entrypoint
-│   ├── package.json        # Backend Dependencies
-│   └── .env.example        # Environment Variables Template
-├── render.yaml             # Render Infrastructure-as-Code Blueprint
-└── README.md               # Project Documentation
+├── client/                     # React (Vite) Frontend Application
+│   ├── src/
+│   │   ├── components/         # Reusable UI Components (Sidebar, Modals, Progress Panels)
+│   │   ├── pages/              # Module Pages (Career, AiAssistant, DocSpace, Guide, Library, PaperDrafter, etc.)
+│   │   ├── config.js           # API Base URL Config
+│   │   └── main.jsx            # React Entrypoint
+│   ├── package.json            # Client Dependencies
+│   └── vite.config.js          # Vite Config
+├── server/                     # Express.js Backend API
+│   ├── controllers/            # Logic for Chatbot, ArXiv, Compare, Draft, Impact, etc.
+│   ├── models/                 # Mongoose Schemas (User, Paper, Contribution, ResearchBuild, etc.)
+│   ├── routes/                 # API Routes (careerRoutes, ragRoutes, draftRoutes, etc.)
+│   ├── services/               # AI & RAG Pipeline (aiManager, faissService, chunker, pdfParser)
+│   ├── index.js                # Express Server Entrypoint
+│   ├── .env.example            # Environment Variable Template
+│   └── package.json            # Server Dependencies
+├── render.yaml                 # Render Blueprint Deployment Spec
+└── README.md                   # Project Documentation
 ```
 
 ---
@@ -83,7 +178,7 @@ cd Gobal_Hackathon
 
 ### 2. Configure Environment Variables
 
-Create a `.env` file inside the `server/` directory based on `server/.env.example`:
+Create a `.env` file in the `server/` directory based on `server/.env.example`:
 
 ```env
 PORT=5001
@@ -93,46 +188,46 @@ GROQ_API_KEY=your_groq_api_key
 GEMINI_API_KEY=your_gemini_api_key
 LLAMA_CLOUD_API_KEY=your_llama_cloud_key
 CLIENT_URL=http://localhost:5173
+RAPIDAPI_KEY=your_rapidapi_jsearch_key
 ```
 
-*(Optional)* Create a `.env` file in the `client/` directory for local API mapping:
+Create a `.env` file in the `client/` directory:
+
 ```env
 VITE_API_BASE_URL=http://127.0.0.1:5001/api
 ```
 
-### 3. Run Backend
+### 3. Start Backend Server
 
 ```bash
 cd server
 npm install
 npm run dev
 ```
-*(Runs backend server on `http://localhost:5001`)*
+*(Runs backend API at `http://localhost:5001`)*
 
-### 4. Run Frontend
+### 4. Start Frontend Application
 
 ```bash
 cd ../client
 npm install
 npm run dev
 ```
-*(Runs frontend application on `http://localhost:5173`)*
+*(Runs frontend application at `http://localhost:5173`)*
 
 ---
 
 ## ☁️ Deployment on Render
 
-This repository includes a [`render.yaml`](render.yaml) blueprint configuration for one-click monorepo deployment on Render.
+This project includes a pre-configured [`render.yaml`](render.yaml) for zero-config blueprint deployment.
 
-### Blueprint Deployment (Recommended):
+1. Push code to your repository: `https://github.com/Neshmitha/Gobal_Hackathon`.
+2. Go to [Render Dashboard](https://dashboard.render.com/) > **New +** > **Blueprints**.
+3. Select your repository.
+4. Set Environment Variables (`MONGO_URI`, `JWT_SECRET`, `GEMINI_API_KEY`, `GROQ_API_KEY`, `VITE_API_BASE_URL`).
+5. Click **Apply**. Render will automatically launch both the Backend Web Service and Frontend Static Site!
 
-1. Go to [Render Dashboard](https://dashboard.render.com/) and click **New +** > **Blueprints**.
-2. Connect your GitHub repository: `https://github.com/Neshmitha/Gobal_Hackathon`.
-3. Provide the required Environment Variables (`MONGO_URI`, `GROQ_API_KEY`, `GEMINI_API_KEY`, `JWT_SECRET`).
-4. Set `VITE_API_BASE_URL` to your backend URL (e.g. `https://clarion-backend.onrender.com/api`).
-5. Render will automatically build and launch both the backend web service and the static React frontend!
-
-> **Note for MongoDB Atlas**: In your MongoDB Atlas Dashboard, go to **Network Access** and add `0.0.0.0/0` to allow inbound connections from Render.
+> **Database Access**: Make sure to add `0.0.0.0/0` under MongoDB Atlas **Network Access** to allow inbound connections from Render.
 
 ---
 
