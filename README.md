@@ -1,130 +1,141 @@
 # Clarion – AI Research Pilot
 
-Clarion is an AI-powered research workspace designed to help students and innovators discover, organize, draft, and collaborate on research papers efficiently. It streamlines the complete research workflow from idea discovery to final paper drafting using AI assistance and structured tools.
+![License](https://img.shields.io/badge/License-ISC-blue.svg)
+![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)
+![React](https://img.shields.io/badge/React-v19-blue.svg)
+![Vite](https://img.shields.io/badge/Vite-v6-purple.svg)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3-38bdf8.svg)
+![Render](https://img.shields.io/badge/Deploy-Render-informational.svg)
 
-The application supports both dark and light themes for a flexible user experience.
+Clarion is an AI-powered research workspace designed to help students, researchers, and innovators discover, organize, draft, and collaborate on research papers efficiently. It streamlines the complete research workflow—from initial topic exploration to AI-assisted paper drafting and peer collaboration—using state-of-the-art LLMs (Gemini, LLaMA, Groq) and RAG (Retrieval-Augmented Generation) technology.
 
+---
 
-## Features
+## 🚀 Key Features
 
+### 🔍 Paper Discovery & ArXiv Integration
+- Search research papers directly from ArXiv by topic or domain.
+- Preview paper abstracts, authors, and citation details before saving them directly to your workspace.
 
-### Discover Papers
+### 📚 Research Workspace & My Library
+- Personal research hub to manage saved and uploaded PDF research papers.
+- Track research domains, add customized notes, mark favorites, and calculate paper impact factors.
+- Compare two research papers side-by-side using AI for deep analytical insights.
 
-The Discover Papers feature allows users to search for research papers by entering a topic of interest. Relevant papers are fetched using the ArXiv API, enabling users to review abstracts and details before saving them to their workspace. This helps users quickly explore any research domain.
+### 🤖 AI Research Assistant & RAG Pipeline
+- Context-aware chatbot powered by LLaMA and Gemini API.
+- Answers research-related questions, explains complex methodologies, and retrieves relevant citations from your index.
 
+### ✍️ Paper Drafter & DocSpace Editor
+- Auto-generate structured paper drafts based on topic, domain, and specific section preferences (IEEE, Springer, APA, ACM, Elsevier formats).
+- Integrated rich text editor (DocSpace) similar to Google Docs for real-time document editing and formatting.
 
-### Workspace
+### 🧭 Guided Research Builder
+- Step-by-step workflow for research beginners: domain selection, paper discovery, problem statement formulation, methodology planning, experiment design, gap analysis, and final evaluation score.
 
-Workspace acts as a personalized research hub where users can access all their saved research papers. Users can filter papers based on domain, upload PDFs from their local system, and manage research materials efficiently. It also integrates the AI Assistant for real-time research support.
+### 🤝 Collaborative Contributions
+- Peer-to-peer research collaboration system.
+- Issue owners can post specific research queries or task requests.
+- Contributors submit pitches and solutions, which owners can review, rate, and incorporate.
 
+---
 
-### AI Research Assistant
+## 🛠️ Tech Stack
 
-The AI Research Assistant is built using LLaMA models and the Groq API. It answers research-related questions, explains methodologies, and suggests improvements or ideas to accelerate the research process.
+- **Frontend**: React 19, Vite, Tailwind CSS, Lucide React, Framer Motion, Axios
+- **Backend**: Node.js, Express.js, MongoDB Atlas, Mongoose
+- **AI Services**: Google Gemini API, Groq LLaMA models, LLaMA Cloud, FAISS Indexing (RAG)
+- **Deployment**: Render (Web Service & Static Site via `render.yaml` Blueprint)
 
+---
 
-### My Library
+## 📁 Repository Structure
 
-My Library allows users to organize and manage research papers in a structured manner. Users can edit paper details, add notes, mark favorites, and view impact factors. It also enables comparison of two research papers using AI for deeper analytical insights.
-
-
-### Paper Drafting
-
-The Paper Drafting feature enables users to generate research papers by providing a topic and additional input. Papers can be generated in standard formats such as IEEE, Springer, APA, ACM, and Elsevier. Users can refine contributions, compare drafts with existing research papers using ArXiv, and further edit them in the DocSpace Editor.
-
-
-### DocSpace Editor
-
-DocSpace is an integrated document editor similar to Google Docs. It allows users to edit, structure, and format research documents freely after AI-generated drafting.
-
-
-### Research Guide
-
-Research Guide helps beginners approach research systematically. It provides suggested domains, research papers, problem statements, methodology guidance, experiment ideas, gap analysis, and a final evaluation score. This structured flow prepares users before drafting a research paper.
-
-
-### Contributions
-
-The Contributions feature supports collaborative research. In "My Contributions," owners can create issues with specific questions for contributors. Contributors answer these questions, and if selected, they can work on solutions. Owners can review, rate, and maintain a contributor list within the platform.
-
-
-## Tech Stack
-
-Frontend:
-- React.js
-- Vite
-- Tailwind CSS
-
-Backend:
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-
-AI and APIs:
-- ArXiv API
-- Groq API
-- LLaMA Models
-- Gemini API
-
-Authentication:
-- JWT-based authentication
-
-
-## Installation and Setup
-
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Neshmitha/Clarion-AI-Research-Pilot.git
-cd Clarion-AI-Research-Pilot
+```
+project-hackathon/
+├── client/                 # React (Vite) Frontend Application
+│   ├── src/                # Components, Pages, Assets, and Configuration
+│   ├── index.html          # Entry HTML file
+│   ├── package.json        # Frontend Dependencies
+│   └── vite.config.js      # Vite Configuration
+├── server/                 # Express.js Backend API
+│   ├── controllers/        # Route Handlers & Business Logic
+│   ├── models/             # Mongoose Data Schemas
+│   ├── routes/             # API Endpoints
+│   ├── services/           # AI, RAG & FAISS Services
+│   ├── index.js            # Server Entrypoint
+│   ├── package.json        # Backend Dependencies
+│   └── .env.example        # Environment Variables Template
+├── render.yaml             # Render Infrastructure-as-Code Blueprint
+└── README.md               # Project Documentation
 ```
 
+---
+
+## ⚙️ Installation & Local Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Neshmitha/Gobal_Hackathon.git
+cd Gobal_Hackathon
+```
 
 ### 2. Configure Environment Variables
 
-Create a .env file inside the server folder and add the following:
-```bash
+Create a `.env` file inside the `server/` directory based on `server/.env.example`:
+
+```env
 PORT=5001
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.p975hui.mongodb.net/ResearchPilot
+JWT_SECRET=your_jwt_secret_key
 GROQ_API_KEY=your_groq_api_key
 GEMINI_API_KEY=your_gemini_api_key
-LLAMA_CLOUD_API_KEY=your_llama_key
+LLAMA_CLOUD_API_KEY=your_llama_cloud_key
+CLIENT_URL=http://localhost:5173
 ```
 
-Ensure all environment variables are properly configured before running the application.
-
+*(Optional)* Create a `.env` file in the `client/` directory for local API mapping:
+```env
+VITE_API_BASE_URL=http://127.0.0.1:5001/api
+```
 
 ### 3. Run Backend
+
 ```bash
 cd server
 npm install
-node index.js
+npm run dev
 ```
-
+*(Runs backend server on `http://localhost:5001`)*
 
 ### 4. Run Frontend
+
 ```bash
-cd client
+cd ../client
 npm install
 npm run dev
 ```
+*(Runs frontend application on `http://localhost:5173`)*
 
+---
 
-## Why Clarion
+## ☁️ Deployment on Render
 
-Research can be overwhelming without structure and guidance. Clarion simplifies the entire research lifecycle by combining paper discovery, AI assistance, drafting tools, and collaboration features into one intelligent system.
+This repository includes a [`render.yaml`](render.yaml) blueprint configuration for one-click monorepo deployment on Render.
 
-## Project Impact
+### Blueprint Deployment (Recommended):
 
-Clarion reduces research complexity by integrating AI-driven discovery, guided research planning, drafting tools, and structured collaboration. It empowers students and innovators to move from idea to research paper efficiently.
+1. Go to [Render Dashboard](https://dashboard.render.com/) and click **New +** > **Blueprints**.
+2. Connect your GitHub repository: `https://github.com/Neshmitha/Gobal_Hackathon`.
+3. Provide the required Environment Variables (`MONGO_URI`, `GROQ_API_KEY`, `GEMINI_API_KEY`, `JWT_SECRET`).
+4. Set `VITE_API_BASE_URL` to your backend URL (e.g. `https://clarion-backend.onrender.com/api`).
+5. Render will automatically build and launch both the backend web service and the static React frontend!
 
-## Conclusion
+> **Note for MongoDB Atlas**: In your MongoDB Atlas Dashboard, go to **Network Access** and add `0.0.0.0/0` to allow inbound connections from Render.
 
-Clarion is built to simplify and structure the research journey for students, innovators, and collaborative teams. By integrating paper discovery, AI-powered assistance, guided research planning, drafting tools, and contribution systems into one unified platform, it reduces the complexity of academic research workflows.
+---
 
-The platform empowers users to move from idea exploration to structured research output with clarity and confidence.
+## 📄 License
 
-> Clarion is designed to convert confusion into clarity.
-
+This project is licensed under the [ISC License](LICENSE).
