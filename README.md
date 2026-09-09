@@ -217,20 +217,5 @@ npm run dev
 
 ---
 
-## ☁️ Deployment on Render
 
-This project includes a pre-configured [`render.yaml`](render.yaml) for zero-config blueprint deployment.
 
-1. Push code to your repository: `https://github.com/Neshmitha/Gobal_Hackathon`.
-2. Go to [Render Dashboard](https://dashboard.render.com/) > **New +** > **Blueprints**.
-3. Select your repository.
-4. Set Environment Variables (`MONGO_URI`, `JWT_SECRET`, `GEMINI_API_KEY`, `GROQ_API_KEY`, `VITE_API_BASE_URL`).
-5. Click **Apply**. Render will automatically launch both the Backend Web Service and Frontend Static Site!
-
-> **Database Access**: Make sure to add `0.0.0.0/0` under MongoDB Atlas **Network Access** to allow inbound connections from Render.
-
----
-
-## 📄 License
-
-This project is licensed under the [ISC License](LICENSE).
