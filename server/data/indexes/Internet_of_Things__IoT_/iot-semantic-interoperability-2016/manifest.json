@@ -1,0 +1,15 @@
+{
+  "paperId": "iot-semantic-interoperability-2016",
+  "title": "Standards-based World-Wide Semantic Interoperability for IoT",
+  "domain": "Internet of Things (IoT)",
+  "totalPages": 5,
+  "totalChunks": 6,
+  "embeddingModel": "text-embedding-3-small",
+  "embeddingDimension": 384,
+  "indexType": "IndexFlatL2",
+  "chunkSize": 1000,
+  "chunkOverlap": 150,
+  "createdAt": "2026-09-09T14:04:00.208Z",
+  "version": 1,
+  "status": "ready"
+}
