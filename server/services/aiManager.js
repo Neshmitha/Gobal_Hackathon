@@ -1,7 +1,7 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const OpenAI = require('openai');
 
-const getGeminiKeys = () => (process.env.GEMINI_API_KEY || '').split(',').map(k => k.trim()).filter(Boolean);
+const getGeminiKeys = () => (process.env.GEMINI_API_KEY || '').split(',').map(k => k.trim()).filter(k => k.startsWith('AIzaSy'));
 const getGroqKeys = () => (process.env.GROQ_API_KEY || '').split(',').map(k => k.trim()).filter(Boolean);
 
 let geminiPointer = 0;
@@ -23,13 +23,10 @@ const getGroqInstance = () => {
     return new OpenAI({ apiKey: key, baseURL: 'https://api.groq.com/openai/v1' });
 };
 
-// Priority list of active Google Gemini models
+// Priority list of active, ultra-fast Google Gemini models
 const DEFAULT_GEMINI_MODELS = [
     'gemini-3.6-flash',
-    'gemini-flash-latest',
-    'gemini-3.1-flash-lite',
-    'gemini-3.5-flash',
-    'gemini-2.5-flash'
+    'gemini-flash-latest'
 ];
 
 /**
