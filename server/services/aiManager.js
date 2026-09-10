@@ -30,16 +30,16 @@ const DEFAULT_GEMINI_MODELS = [
 ];
 
 /**
- * Direct REST helper for Gemini API call with 15s timeout
+ * Direct REST helper for Gemini API call with 60s timeout & 8192 token limit
  */
 async function callGeminiRest(apiKey, modelName, prompt, options = {}) {
-    const { maxTokens = 2048, temperature = 0.8 } = options;
+    const { maxTokens = 8192, temperature = 0.7 } = options;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
     
     const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        signal: AbortSignal.timeout(15000),
+        signal: AbortSignal.timeout(60000),
         body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
             generationConfig: { maxOutputTokens: maxTokens, temperature }
@@ -63,7 +63,7 @@ async function callGeminiRest(apiKey, modelName, prompt, options = {}) {
 }
 
 /**
- * Direct SSE Streaming REST helper for Gemini API call with 15s connection timeout
+ * Direct SSE Streaming REST helper for Gemini API call with 60s connection timeout & 8192 token limit
  */
 async function streamGeminiRest(apiKey, modelName, prompt, onChunk) {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:streamGenerateContent?key=${apiKey}&alt=sse`;
@@ -71,9 +71,10 @@ async function streamGeminiRest(apiKey, modelName, prompt, onChunk) {
     const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        signal: AbortSignal.timeout(15000),
+        signal: AbortSignal.timeout(60000),
         body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }]
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: { maxOutputTokens: 8192, temperature: 0.7 }
         })
     });
 
