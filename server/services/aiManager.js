@@ -1,7 +1,7 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const OpenAI = require('openai');
 
-const getGeminiKeys = () => (process.env.GEMINI_API_KEY || '').split(',').map(k => k.trim()).filter(k => k.startsWith('AIzaSy'));
+const getGeminiKeys = () => (process.env.GEMINI_API_KEY || '').split(',').map(k => k.trim()).filter(k => k.startsWith('AIzaSy') || k.startsWith('AQ.'));
 const getGroqKeys = () => (process.env.GROQ_API_KEY || '').split(',').map(k => k.trim()).filter(Boolean);
 
 let geminiPointer = 0;
